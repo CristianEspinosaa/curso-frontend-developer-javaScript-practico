@@ -87,36 +87,40 @@ productList.push(
     }
 )
 
+function renderProducts (arrayProducts){
 
-for (product of productList){
+    for (product of arrayProducts){
+        
+        const productCard = document.createElement('div')
+        productCard.classList.add('product-card')
     
-    const productCard = document.createElement('div')
-    productCard.classList.add('product-card')
-
-    const img = document.createElement('img')
-    img.setAttribute('src', product.image)
-
-    const productInfo = document.createElement('div')
-    productInfo.classList.add('product-info')
-
-    const productInfoDiv = document.createElement('div')
-
-    const productPrice = document.createElement('p')
-    productPrice.innerText = '$' + product.price
-    const productName = document.createElement('p')
-    productName.innerText = product.name
-
-    const productInfoFigure = document.createElement('figure')
+        const img = document.createElement('img')
+        img.setAttribute('src', product.image)
     
-    const productImgCard = document.createElement('img')
-    productImgCard.setAttribute('src', './icons/bt_add_to_cart.svg')
-
-    productInfoFigure.appendChild(productImgCard)
-    productInfoDiv.append(productPrice, productName)
-    productInfo.append(productInfoDiv, productInfoFigure)
-    productCard.append(img, productInfo)
+        const productInfo = document.createElement('div')
+        productInfo.classList.add('product-info')
     
-    cardsContainer.appendChild(productCard)
+        const productInfoDiv = document.createElement('div')
     
-
+        const productPrice = document.createElement('p')
+        productPrice.innerText = '$' + product.price
+        const productName = document.createElement('p')
+        productName.innerText = product.name
+    
+        const productInfoFigure = document.createElement('figure')
+        
+        const productImgCard = document.createElement('img')
+        productImgCard.setAttribute('src', './icons/bt_add_to_cart.svg')
+    
+        productInfoFigure.appendChild(productImgCard)
+        productInfoDiv.append(productPrice, productName)
+        productInfo.append(productInfoDiv, productInfoFigure)
+        productCard.append(img, productInfo)
+        
+        cardsContainer.appendChild(productCard)
+        
+    
+    }
 }
+
+renderProducts(productList)
