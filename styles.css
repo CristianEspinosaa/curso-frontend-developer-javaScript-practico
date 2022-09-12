@@ -283,10 +283,12 @@
   /*Detail info product*/
 
   .detail-info-product {
+    background-color: var(--white);
     width: 360px;
     padding-bottom: 24px;
     position: absolute;
-    right: 0;
+    top: 81px;
+    right: 10px;
   }
   .product-detail-close {
     background: var(--white);
